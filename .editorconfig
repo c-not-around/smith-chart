@@ -1,0 +1,12 @@
+[*.cs]
+charset = utf-8
+end_of_line = crlf
+indent_size = 4
+indent_style = space
+insert_final_newline = false
+
+[*.tex]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = tab

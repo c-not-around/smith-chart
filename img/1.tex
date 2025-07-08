@@ -1,0 +1,278 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[left=15mm,right=15mm,top=10mm,bottom=10mm,bindingoffset=0mm]{geometry}
+\usepackage{graphicx, nicefrac}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{stackengine}
+
+\newcommand\xrowht[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
+
+\graphicspath{}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\begin{document}
+	\thispagestyle{empty}
+	$\begin{cases}
+		U = U^+ + U^-; \\
+		I = I^+ + I^-;
+	\end{cases}$
+	
+	$\displaystyle Z = \frac{U}{I} = \frac{U^++U^-}{I^++I^-};$ \quad --- \quad импеданс;
+	
+	$\displaystyle \rho_U = \frac{U^+}{U^-}$ \quad --- \quad коэффициент отражения по напряжению;
+	
+	$\displaystyle \rho_I = \frac{I^+}{I^-}$ \quad --- \quad коэффициент отражения по току;
+	
+	$\displaystyle K_{\text{БВ}} = \frac{U_{min}}{U_{max}}$ \quad --- \quad коэффициент бегущей волны;
+	
+	$\displaystyle K_{\text{СВН}} = \frac{U_{max}}{U_{min}}$ \quad --- \quad коэффициент стоячей волны;
+	
+	$\displaystyle Z_H = \frac{U^+(1+\rho)}{I^+(1-\rho)} = Z_B \frac{1+\rho}{1-\rho}; \quad
+	\rho = \frac{Z_H - Z_B}{Z_H + Z_B};$
+	
+	$\displaystyle K_{\text{БВ}} = \frac{1-\rho}{1+\rho}; \quad \rho = \frac{1-K_{\text{БВ}}}{1+K_{\text{БВ}}};$ \\
+	
+	$\displaystyle K_{\text{СВН}} = \frac{1+\rho}{1-\rho}; \quad \rho = \frac{K_{\text{СВН}}-1}{K_{\text{СВН}}+1};$ \\
+	
+	$\displaystyle Z_0 = \frac{Z_H}{Z_B}; \qquad Z_0 = R + jX; \qquad \rho = \frac{Z_0-1}{Z_0+1};
+	\qquad \rho = A + jB; $ \\
+	
+	$\displaystyle A + jB = \frac{R + jX -1}{R + jX + 1};$ \\
+	
+	$\displaystyle A+jB = \frac{R^2-1+X^2+2jX}{(R+1)^2+X^2};$ \\
+	
+	$\begin{cases}
+		A = \displaystyle\frac{R^2+X^2-1}{(R+1)^2+X^2}; \\
+		B = \displaystyle\frac{2X}{(R+1)^2+X^2};
+	\end{cases}$ \\
+	
+	$\begin{cases}
+		X^2 = \displaystyle\frac{A(R+1)^2-R^2+1}{1-A}; \\
+	\end{cases}$ \\
+	
+	\begin{tabular}{ rlr }  
+		$R\,|\,G$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\ 
+		$X\,|\,B$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$Z\,|\,Y$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$Z_{\text{В}}\,|\,Y_{\text{В}}$ &: & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$\mathrm{Re}\,\hat{\rho}$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$\mathrm{Im}\,\hat{\rho}$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$\rho$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$\mathrm{Arg}\,\hat{\rho}$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$K_{\text{БВ}}$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+		$K_{\text{СВН}}$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\  
+		$\displaystyle\frac{\Delta x}{\lambda}$ & : & $\displaystyle\frac{\Delta x}{\lambda}$ \\
+	\end{tabular}
+	\newpage
+	\thispagestyle{empty}
+	\begin{minipage}{0.5\textwidth}
+	\textbf{Управление:}
+	\begin{itemize}
+		\item Движение мыши с зажатой левой кнопкой --- построение окружностей постоянного активного $R$ и
+		реактивного $X$ сопротивлений, проходящих через данную точку, лажащую на окружности радиуса
+		равного модулю коэффициента отражения $\rho$.
+		\item Движение мыши с зажатой правой кнопкой --- смещение относительно точки $\hat{\rho} = 0$.
+		\item Колёсико мыши --- изменение масштаба с шагом 25\%.
+		\item SHIFT --- фиксирует значение по $x$ т.е. $\mathrm{Re}\,\hat{\rho}$\,.
+		\item CTRL --- фиксирует значение по $y$ т.е. $\mathrm{Im}\,\hat{\rho}$\,.
+	\end{itemize}
+	\textbf{Задачи:}
+	\begin{itemize}
+		\item[1)] Определение $\hat{Z}=R+jX$ по заданным: $\rho$ или $K_{\text{БВ}}$ или $K_{\text{СВН}}$
+		и $\displaystyle\frac{\Delta x}{\lambda}$;
+		\item[2)] Определение $\hat{\rho}$, $K_{\text{БВ}}$, $K_{\text{СВН}}$
+		и $\displaystyle\frac{\Delta x}{\lambda}$ по заданному $\hat{Z}=R+jX$;
+	\end{itemize} 
+	
+	Рассчёт значений искомых величин происходит по нажатию <Enter> в поле ввода задаваемого значения.
+	
+	При вводе ненормированных значений $R$ и $X$ необходимо ввести значение $Z_{\text{В}}$ в соответствущее
+	поле.
+	
+	Формат вывода величины $\displaystyle\frac{\Delta x}{\lambda}$ :
+	\begin{center}
+		$\boxed{R_H\mathstrut} \rightarrow \boxed{\,\sim\mathstrut}$
+		$\biggl( \boxed{\,\sim\mathstrut} \rightarrow \boxed{R_H\mathstrut} \biggr)$
+	\end{center}
+	Вводится только значение <<к генератору>>. \\
+	\end{minipage}
+	\newpage
+	\thispagestyle{empty}
+	\begin{minipage}{0.5\textwidth}
+		\textbf{Вывод уравнений для вычисления параметров линии и построения соответствующих кривых для
+		произвольной точки диаграмы.} \\
+		\begin{equation}
+			\begin{cases}
+				\hat{U} = \hat{U}^+ + \hat{U}^-; \\
+				\hat{I} = \hat{I}^+ + \hat{I}^-;
+			\end{cases}
+		\end{equation}
+		Импеданс нагрузки:
+		\begin{equation}
+			\displaystyle \hat{Z_H} = \frac{\hat{U}}{\hat{I}} =
+			\frac{\hat{U}^+ + \hat{U}^-}{\hat{I}^+ + \hat{I}^-};
+		\end{equation}
+		Коэффициент отражения:
+		\begin{equation}
+			\displaystyle \hat{\rho} = \frac{\hat{U}^+}{\hat{U}^-};
+		\end{equation} 
+		Тогда импеданс нагрузки:
+		\begin{equation}
+			\displaystyle \hat{Z_H} = \frac{\hat{U}^+(1+\hat{\rho})}{\hat{I}^+(1-\hat{\rho})} =
+			\hat{Z_B} \frac{1+\hat{\rho}}{1-\hat{\rho}};
+		\end{equation} 
+		Выразим коэффициент отражения:
+		\begin{equation}
+			\hat{\rho} = \frac{\hat{Z}_H - \hat{Z}_B}{\hat{Z}_H + \hat{Z}_B};
+		\end{equation} 
+		Введем нормированный импеданс:
+		\begin{equation}
+			\hat{Z_0} = \frac{\hat{Z}_H}{\hat{Z}_B};
+		\end{equation} 
+		Тогда коэффициент тражения:
+		\begin{equation}
+			\hat{\rho} = \frac{\hat{Z}_0 - 1}{\hat{Z}_0 + 1} = \frac{R+jX-1}{R+jX+1};
+		\end{equation}
+		\begin{center}
+			$\hat{\rho} = \displaystyle\frac{\left( R+jX-1 \right)\left( R-jX+1 \right)}{\left( R+jX+1 \right)\left( R-jX+1 \right)}$;
+		\end{center}
+		\begin{center}
+			$\hat{\rho} = x+jy = \displaystyle\frac{R^2+X^2-1+2jX}{{(R+1)}^2+X^2}$;
+		\end{center}
+		\begin{center}
+			$\begin{cases}
+				\mathrm{Re}\,\hat{\rho} = x = \displaystyle\frac{R^2+X^2-1}{{(R+1)}^2+X^2}; \\
+				\mathrm{Im}\,\hat{\rho} = y = \displaystyle\frac{2X}{{(R+1)}^2+X^2};
+			\end{cases}$
+		\end{center}
+		Выражая $X^2$ через $\mathrm{Re}\,\hat{\rho}$ :
+		\begin{center}
+			$X^2 = \displaystyle\frac{x(R+1)^2-R^2+1}{1-x};$
+		\end{center}
+		и подставляя в $\mathrm{Im}\,\hat{\rho}$ :
+		\begin{equation}
+			\displaystyle {\left(x-\frac{R}{R+1}\right)}^2 + {y}^2 = {\left(\frac{1}{R+1}\right)}^2;
+		\end{equation}
+	\end{minipage}
+	\newpage
+	\thispagestyle{empty}
+	\begin{minipage}{0.5\textwidth}
+		Полученное уравнение --- уравнение окружности:
+		\begin{center}
+			$\begin{cases}
+				\left( \displaystyle\frac{R}{R+1}; 0 \right) & \text{\quad --- \quad центр}; \\
+				\hspace{15pt}\displaystyle\frac1{R+1} & \text{\quad --- \quad радиус};
+			\end{cases}$
+		\end{center}
+		В параметрическом виде:
+		\begin{equation}
+			\begin{cases}
+				x(t) = \displaystyle \frac{R}{R+1} + \frac1{R+1} \cos(t); \\
+				y(t) = \displaystyle \frac1{R+1} \sin(t); \\
+				0 \leq t \leq 2\pi;
+			\end{cases}
+		\end{equation}
+		Выражая $R$ через $\mathrm{Im}(\rho)$ :
+		\begin{center}
+			$R = \displaystyle \frac{\pm\sqrt{-yX(yX-2)}-y}{y};$
+		\end{center}
+		и подставляя в $\mathrm{Re}(\rho)$ :
+		\begin{equation}
+			\displaystyle {(x-1)}^2+{\left(y-\frac1X\right)}^2 = {\left(\frac1X\right)}^2;
+		\end{equation}
+		Полученное уравнение --- уравнение окружности:
+		\begin{center}
+			$\begin{cases}
+				\left( 1; \displaystyle\frac1X \right) & \text{\quad --- \quad центр}; \\
+				\hspace{14pt}\displaystyle\frac1X & \text{\quad --- \quad радиус};
+			\end{cases}$
+		\end{center}
+		В параметрическом виде:
+		\begin{equation}
+			\begin{cases}
+				x(t) = \displaystyle 1 + \frac1X \cos(t); \\
+				y(t) = \displaystyle \frac1X + \frac1X \sin(t); \\
+				\displaystyle \frac{\pi}2 \leq t \leq 2 \arctg \left( \frac1X \right);
+			\end{cases}
+		\end{equation}
+		Окружности постоянного активного сопротивления строятся по уравнениям (9), а
+		дуги постоянного реактивного сопротивления по уравнениям (11). \\
+		
+		Преобразовывая (8) и (10) получим :
+		\begin{equation}
+			\begin{cases}
+				x^2 + y^2 - 2x\displaystyle\frac{R}{R+1} + \frac{R^2+1}{{(R+1)}^2} = 0; \\
+				x^2 + y^2 - 2x - 2y\displaystyle\frac1X + 1 = 0;
+			\end{cases}
+		\end{equation}
+		Введём $k = x^2 + y^2 = {\rho}^2$ \quad --- \quad имеет смысл определителя (показывает принадлежит
+		ли точка с координатами $x$ и $y$ обласди допустимых значений $\rho$).
+	\end{minipage}
+	\newpage
+	\thispagestyle{empty}
+	\begin{minipage}{0.5\textwidth}
+		Уравнения для нахождения $R$ и $X$ по заданным $x$ и $y$ можно выразить из (12):
+		\begin{equation}
+			\begin{cases}
+				R = \displaystyle \frac{1-k}{1+k-2x}; \\
+				X = \displaystyle \frac{2y}{1+k-2x}; \\
+			\end{cases}
+		\end{equation}
+		Модуль коэффициента отражения через $x$ и $y$ выражается как:
+		\begin{equation}
+			\rho = \sqrt{x^2 + y^2} = \sqrt{k};
+		\end{equation}
+		Модуль коэффициента отражения через $x$ и $y$ выражается как:
+		\begin{equation}
+			\mathrm{Arg}\,\hat{\rho} = \arctg \left( \displaystyle\frac{y}{x} \right);
+		\end{equation}
+		Коэффициенты бегущей и стоячей волн находтся через $\rho$:
+		\begin{equation}
+			\begin{cases}
+				K_{\text{БВ}}  = \displaystyle \frac{1-\rho}{1+\rho}; \\
+				K_{\text{СВН}} = \displaystyle \frac{1+\rho}{1-\rho}; \\
+			\end{cases}
+		\end{equation}
+		Величина $\displaystyle \frac{\Delta x}{\lambda}$ линейно зависит от аргумента коэффициента тражения:
+		\begin{equation}
+			\displaystyle \frac{\Delta x}{\lambda} =
+			\frac14 \left[ 1 - \frac{\mathrm{Arg}\,\hat{\rho}}{\pi} \right];
+		\end{equation}
+		Таким образом для произвольной точки $(x;y)$ из области допустимых значений $\rho$ можно вычислить:
+		\begin{center}
+			$\displaystyle R, \quad X, \quad \hat{Z}_0, \quad \hat{\rho}, \quad K_{\text{БВ}}, \quad
+			K_{\text{СВН}}, \quad \frac{\Delta x}{\lambda}.$
+		\end{center}
+		\textbf{Решение задачи I типа.} \\
+		$R$ и $X$ находятся по формулам (13), где:
+		\begin{equation}
+			\begin{cases}
+				k = {\rho}^2; \\
+				x = \mathrm{Re}\,\hat{\rho} = \rho \cos(\varphi); \\
+				y = \mathrm{Im}\,\hat{\rho} = \rho \sin(\varphi); \\
+			\end{cases}
+		\end{equation}
+		Модуль коэффициента отражения $\rho$ либо задан непосредственно, либо вычисляется по формулам:
+		\begin{equation}
+			\rho = \displaystyle \frac{1-K_{\text{БВ}}}{1-K_{\text{БВ}}} =
+			\displaystyle \frac{K_{\text{СВН}}-1}{K_{\text{СВН}}+1};
+		\end{equation}
+		Аргумент коэффициента отражения $\varphi$ вычисляется по формуле:
+		\begin{equation}
+			\varphi = \mathrm{Arg}\,\hat{\rho} = \pi \left[ 1 - 4\displaystyle\frac{\Delta x}{\lambda} \right];
+		\end{equation}
+	\end{minipage}
+	\newpage
+	\thispagestyle{empty}
+	\begin{minipage}{0.5\textwidth}
+		\textbf{Решение задачи II типа.} \\
+		Действительная и мнимая части коэффициента отражения через заданные $R$ и $X$
+		вычислется по формуле (7).
+		Модуль и аргумент коэффициента отражения находятся через действительную и мнимую часть.
+		Коэффициенты бегущей и стоячей волн находятся по формуле (16). Величина 
+		$\displaystyle\frac{\Delta x}{\lambda}$ по формуле (17).
+	\end{minipage}
+\end{document}
