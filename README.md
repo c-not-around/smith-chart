@@ -17,5 +17,5 @@ and also displays the obtained point on the Smith chart. The point on the Smith 
   * ALT — fixes the value on the circle equal to TWC(SWR), i.e. `ρ`.
 
 The calculation of the values ​​of the sought quantities is performed by pressing `<Enter>` in the input field of the specified value.
-When entering non-standard values ​​`R`, `X`, `G` and `B`, it is necessary to enter the value `Zw` or `Yw` in the corresponding field.
+When entering non-normalized values ​​`R`, `X`, `G` and `B`, it is necessary to enter the value `Zw` or `Yw` in the corresponding field.
 Left-clicking the screenshot button will save a screenshot of only the chart area, right-clicking will save a screenshot of the entire window.
